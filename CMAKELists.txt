@@ -1,0 +1,6 @@
+cmake minimum required(VERSION 3.10)
+project(Vulcan)
+find_package(OpenCV REQUIRED)
+add executable(Vulcan main.cpp)
+target_link_libraries(Vulcan $(OpenCV_LIBS))
+
