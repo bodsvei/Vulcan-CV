@@ -52,7 +52,7 @@ int main() {
         std::vector<cv::Rect> faces;
         face_detect.detectMultiScale(gray_frame, faces, 1.1, 5, 0, cv::Size(30, 30));
 
-        // Find the index of the largest face
+        // Find the index of the closest face
         int largest_face_index = -1;
         double max_area = 0.0;
         for (size_t i = 0; i < faces.size(); ++i) {
@@ -84,7 +84,6 @@ int main() {
                 cv::Point eye_center(faces[i].x + eyes[j].x + eyes[j].width / 2, faces[i].y + eyes[j].y + eyes[j].height / 2);
                 int radius = cvRound((eyes[j].width + eyes[j].height) * 0.25);
                 
-                // Draw the eye circle on the original color frame, adjusting for the face's position
                 cv::circle(frame, eye_center, radius, cv::Scalar(255, 0, 0), 2); // Blue circle
             }
         }
@@ -96,7 +95,7 @@ int main() {
         // Display the resulting frame
         cv::imshow("Camera", frame);
 
-        // Exit loop if ESC key (ASCII value 27) is pressed
+        // Exit loop if ESC key
         if (cv::waitKey(1) == 27) {
             break;
         }
