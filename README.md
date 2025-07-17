@@ -8,3 +8,5 @@
 ### 2. Multiple face processing
 ![img2]( demos/multiple-faces.png "multiple-faces")
 - Closest face marked with green rectangle, other faces marked with red rectangle
+## Workflow
+![img3]( demos/Vulcan-System-design.png "multiple-faces")
